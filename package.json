@@ -2,14 +2,21 @@
   "name": "greet",
   "version": "0.0.0",
   "description": "A simple and naive greeter",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/.bin/mocha",
+    "start": "(coffee --compile --output dist --watch src &);node ./dist/index.js"
   },
   "keywords": [
     "hello-galaxy"
   ],
   "author": "Chutian Yang",
   "license": "MIT",
-  "bin": { "greet": "./bin/greet.js" }
+  "bin": {
+    "greet": "./bin/greet.js"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "mocha": "^2.2.4"
+  }
 }
